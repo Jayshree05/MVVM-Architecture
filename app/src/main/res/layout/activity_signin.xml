@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="person"
+            type="com.example.mvvmarchitechre.model.Person" />
+    </data>
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.mvvmarchitechre.utility.customfont.RegularTextView
+                android:id="@+id/tvlanguage"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:text="@string/Language"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content">
+            </com.example.mvvmarchitechre.utility.customfont.RegularTextView>
+
+            <com.example.mvvmarchitechre.utility.customfont.BoldTextView
+                android:id="@+id/login_title"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvlanguage"
+                android:text="@string/login"
+                android:gravity="center"
+                android:layout_margin="@dimen/_30sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:layout_height="wrap_content">
+            </com.example.mvvmarchitechre.utility.customfont.BoldTextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/layout_form"
+                android:padding="20sp"
+                app:layout_constraintTop_toBottomOf="@id/login_title"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etName"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </androidx.appcompat.widget.AppCompatEditText>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPass"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/etName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:hint="@string/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </androidx.appcompat.widget.AppCompatEditText>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:text="@string/login"
+                    android:background="@drawable/bg_gray_button"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etPass"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="@dimen/_200sdp"
+                    android:id="@+id/btnLogin"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <com.example.mvvmarchitechre.utility.customfont.BoldTextView
+                    android:id="@+id/etForgotPass"
+                    app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+                    android:hint="Forgot password"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </com.example.mvvmarchitechre.utility.customfont.BoldTextView>
+
+                <com.example.mvvmarchitechre.utility.customfont.BoldTextView
+                    android:id="@+id/tvemail"
+                    app:layout_constraintTop_toBottomOf="@+id/etForgotPass"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="@{person.email}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </com.example.mvvmarchitechre.utility.customfont.BoldTextView>
+
+                <com.example.mvvmarchitechre.utility.customfont.BoldTextView
+                    android:id="@+id/tvPass"
+                    app:layout_constraintTop_toBottomOf="@+id/etForgotPass"
+                    android:textColor="@color/black"
+                    android:text="@{person.password}"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </com.example.mvvmarchitechre.utility.customfont.BoldTextView>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="@string/image_upload"
+                android:visibility="gone"
+                android:background="@drawable/bg_gray_button"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_form"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="@dimen/_200sdp"
+                android:id="@+id/btnImageUpload"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content">
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profilepic"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/btnImageUpload"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

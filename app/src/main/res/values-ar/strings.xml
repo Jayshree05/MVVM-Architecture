@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mvvm Architechre</string>
+    <string name="arabic">arabic</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="cat_list">Cat List</string>
+    <string name="password">Password</string>
+    <string name="success">Success</string>
+    <string name="image_upload">Image Upload</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="no_internet_error_msg">No internet connection</string>
+    <string name="premission_des">Application need permissions. Do you want to allow permissions ?</string>
+    <string name="Language">Language</string>
+</resources>

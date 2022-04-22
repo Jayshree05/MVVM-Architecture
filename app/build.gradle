@@ -1,0 +1,132 @@
+
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    subprojects {
+        project.configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'com.android.support'
+                        && !details.requested.name.contains('multidex') ) {
+                    details.useVersion "version which should be used - in your case 26.0.0-beta2"
+                }
+            }
+        }
+    }
+
+
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.mvvmarchitechre"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+
+
+    flavorDimensions "buildTypes"
+    productFlavors {
+        development {
+            dimension "buildTypes"
+            buildConfigField "String", "BASE_URL", '"https://dev/backend-dev/api/v4/user/"'
+        }
+        production {
+            dimension "buildTypes"
+            buildConfigField "String", "BASE_URL", '"https://Prod/backend/api/v4/user/"'
+        }
+        staging {
+            dimension "buildTypes"
+            buildConfigField "String", "BASE_URL", '"https://staging/backend/api/v4/user/"'
+        }
+    }
+}
+
+def rxJavaVersion = '2.1.1'
+def butterKnifeVersion = '10.2.3'
+def daggerVersion = '2.28.3'
+def work_version = "2.7.1"
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // for font size
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // check app update
+    implementation 'org.jsoup:jsoup:1.13.1'
+    implementation 'com.vdurmont:semver4j:3.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "com.squareup.moshi:moshi:1.5.0"
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    implementation 'com.android.support:support-v4:27.1.1'
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    // Room components
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+    implementation "androidx.work:work-runtime:$work_version"
+
+    implementation "com.google.firebase:firebase-messaging:23.0.2"
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+}
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'

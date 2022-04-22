@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mvvm Architechre</string>
+    <string name="login">Login</string>
+    <string name="arabic">arabic</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="cat_list">Cat List</string>
+    <string name="password">Password</string>
+    <string name="success">Success</string>
+    <string name="image_upload">Image Upload</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="no_internet_error_msg">No internet connection</string>
+    <string name="premission_des">Application need permissions. Do you want to allow permissions ?</string>
+    <string name="Language">Language</string>
+    <string name="default_notification_channel_id">Channel</string>
+    <string name="app_upgrade_message">App upgrade message</string>
+    <string name="update">Update</string>
+</resources>

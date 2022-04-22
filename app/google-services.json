@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "114166652905",
+    "project_id": "com.example.mvvmarchitechre",
+    "storage_bucket": "asapp-new-user.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114166652905:android:277ec857f8be652b3bf578",
+        "android_client_info": {
+          "package_name": "com.example.mvvmarchitechre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114166652905-k7tsahrigeistp1ri2dgq2fbu2q60lr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeVrytaNXHMdpCJVEBheKFCgsn4A7DvoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114166652905-k7tsahrigeistp1ri2dgq2fbu2q60lr7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "114166652905-6lvjqd87tgenikibdf0cl387sqstuj5u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mvvmarchitechre",
+                "app_store_id": "1489596883"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114166652905:android:2d671fe2623af3d63bf578",
+        "android_client_info": {
+          "package_name": "com.example.mvvmarchitechre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114166652905-9elk58jdq62jp2j0mdliufl1a649lv8b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mvvmarchitechre",
+            "certificate_hash": "cdefed971ae6fea326cb5a8790528ac506ffbf86"
+          }
+        },
+        {
+          "client_id": "114166652905-k7tsahrigeistp1ri2dgq2fbu2q60lr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeVrytaNXHMdpCJVEBheKFCgsn4A7DvoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114166652905-k7tsahrigeistp1ri2dgq2fbu2q60lr7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "114166652905-6lvjqd87tgenikibdf0cl387sqstuj5u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mvvmarchitechre",
+                "app_store_id": "1489596883"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
